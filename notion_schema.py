@@ -66,7 +66,7 @@ async def create_notion_page(extracted: dict, image_url: str = None) -> dict:
         except (TypeError, ValueError):
             logger.warning(f"合計金額の変換失敗: {total}")
 
-    db_id = settings.NOTION_DATABASE_ID
+    db_id = settings.notion_database_id
     logger.info(f"Notion登録: db_id={db_id}, title={title}")
 
     page = notion.pages.create(
