@@ -10,7 +10,7 @@ from notion_client import Client
 from config import settings
 
 logger = logging.getLogger(__name__)
-notion = Client(auth=settings.NOTION_TOKEN)
+notion = Client(auth=settings.notion_api_key)
 
 
 def _truncate(text: str, max_chars: int = 2000) -> str:
