@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+line-bot-sdk
+google-generativeai
+notion-client
+python-dotenv
+pydantic-settings
+httpx
