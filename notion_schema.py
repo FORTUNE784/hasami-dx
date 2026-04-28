@@ -10,7 +10,7 @@ from notion_client import Client
 from config import settings
 
 logger = logging.getLogger(__name__)
-notion = Client(auth=settings.NOTION_TOKEN)
+notion = Client(auth=settings.notion_api_key)
 
 
 def _truncate(text: str, max_chars: int = 2000) -> str:
@@ -66,7 +66,7 @@ async def create_notion_page(extracted: dict, image_url: str = None) -> dict:
         except (TypeError, ValueError):
             logger.warning(f"合計金額の変換失敗: {total}")
 
-    db_id = settings.NOTION_DATABASE_ID
+    db_id = settings.notion_database_id
     logger.info(f"Notion登録: db_id={db_id}, title={title}")
 
     page = notion.pages.create(
